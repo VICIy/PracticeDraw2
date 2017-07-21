@@ -47,6 +47,6 @@ public class Practice01LinearGradientView extends View {
         //绘制圆，圆心 半径
         canvas.drawCircle(200, 200, 100, paint);
         canvas.drawCircle(500, 200, 100, paintTwo);
-        canvas.drawCircle(800, 200, 100, paintTwo);
+        canvas.drawCircle(800, 200, 100, paintThree);
     }
 }
