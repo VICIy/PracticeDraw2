@@ -48,5 +48,6 @@ public class Practice01LinearGradientView extends View {
         canvas.drawCircle(200, 200, 100, paint);
         canvas.drawCircle(500, 200, 100, paintTwo);
         canvas.drawCircle(800, 200, 100, paintThree);
+
     }
 }
