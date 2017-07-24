@@ -37,17 +37,21 @@ public class Practice11StrokeMiterView extends View {
         super.onDraw(canvas);
 
         canvas.save();
-
+        //控制尖角过长转换为平角模式，可有属性MITER来进行控制,值越大角越尖锐
+        //大于这个角的尖角会被保存，小于这个角的尖角会被截取成平角
         canvas.translate(100, 100);
         // MITER 值：1
+        paint.setStrokeMiter(1);
         canvas.drawPath(path, paint);
 
         canvas.translate(300, 0);
         // MITER 值：2
+        paint.setStrokeMiter(2);
         canvas.drawPath(path, paint);
 
         canvas.translate(300, 0);
         // MITER 值：5
+        paint.setStrokeMiter(5);
         canvas.drawPath(path, paint);
 
         canvas.restore();
