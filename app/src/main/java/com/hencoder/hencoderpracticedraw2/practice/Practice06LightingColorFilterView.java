@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.LightingColorFilter;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -14,6 +15,9 @@ import com.hencoder.hencoderpracticedraw2.R;
 public class Practice06LightingColorFilterView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     Bitmap bitmap;
+    //第一个参数用来乘，第二个参数用来加
+    LightingColorFilter lightingColorFilter = new LightingColorFilter(0X00ffff,0X000000);
+    LightingColorFilter lightingColorFilterTwo = new LightingColorFilter(0X00ffff,0X003000);
 
     public Practice06LightingColorFilterView(Context context) {
         super(context);
@@ -37,9 +41,12 @@ public class Practice06LightingColorFilterView extends View {
 
         // 使用 Paint.setColorFilter() 来设置 LightingColorFilter
 
+        paint.setColorFilter(lightingColorFilter);
+
         // 第一个 LightingColorFilter：去掉红色部分
         canvas.drawBitmap(bitmap, 0, 0, paint);
 
+        paint.setColorFilter(lightingColorFilterTwo);
         // 第二个 LightingColorFilter：增强绿色部分
         canvas.drawBitmap(bitmap, bitmap.getWidth() + 100, 0, paint);
     }
